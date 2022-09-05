@@ -5,7 +5,11 @@ describe('Primeiro teste', () => {
         expect(await $('~text-input')).toBeDisplayed()
         await $('//android.view.ViewGroup[@content-desc="Dropdown"]').click()
         expect(await $('~/hierarchy/android.widget.FrameLayout')).toBeDisplayed()
-        await $('/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.appcompat.widget.LinearLayoutCompat/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]').click()
+        await $('//android.widget.CheckedTextView[3]').click()
+        expect(await $('~button-Active')).toBeDisplayed()
+        await $('android.widget.TextView').click()
+        expect(await $('/hierarchy/android.widget.FrameLayout')).toBeDisplayed()
+        await $('//android.widget.Button[3]').click()
         
     });
 });
